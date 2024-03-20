@@ -1,19 +1,14 @@
 import { Router } from "express";
+import { AuthController } from "../auth/controller";
 
 export class AuthRoutes {
     static get routes(): Router {
         const router = Router();
+        const controller = new AuthController();
 
-        router.get('/monda', (req, res) => {
-            res.json('<h1>Auth routes</h1>');
-        });
+        router.post('/login', controller.loginUser);
 
-        router.post('/login', (req, res) => {
-            res.json('login') 
-        });
-        router.post('/register', (req, res) => {
-            res.json('register')
-        });
+        router.post('/register', controller.registerUser);
 
         return router;
     }

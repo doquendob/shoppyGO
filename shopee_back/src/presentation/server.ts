@@ -1,4 +1,5 @@
 import express, { Router } from 'express';
+const cors = require ("cors");
 
 interface Options {
     port?: number;
@@ -17,9 +18,13 @@ export class Server {
         this.routes = routes;
     }
 
-
     async start () {
-        //use the defined routes
+        
+        this.app.use(cors());
+
+        this.app.use(express.json()); // This works for raw body data
+        this.app.use(express.urlencoded({ extended: true })); //This works for x www encoded body
+
         this.app.use( this.routes );
 
         this.app.listen(this.port, () => {

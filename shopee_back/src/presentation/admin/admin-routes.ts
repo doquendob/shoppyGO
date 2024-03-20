@@ -5,7 +5,7 @@ export class AdminRoutes {
         const router = Router();
 
         router.post('/create-product', (req, res) => {
-            res.send('<h1>Create Product</h1>');
+            res.json({products: 'Books'})
         });
 
         return router;
