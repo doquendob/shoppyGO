@@ -3,6 +3,7 @@ import './App.css';
 import withDataFetching from './hoc/withDataFetching';
 import ProductsList from './components/pages/ProductsList';
 import dataFetch from './fetching/dataFetch';
+import Navbar from './components/Navbar/Navbar';
 
 function App() {
   const options = {
@@ -15,6 +16,7 @@ function App() {
 
   return (
     <div className="App">
+      <Navbar/>
       <DataFetchingComponent httpOptions={options} />
       {/* <ProductsList products={getProducts}/> */}
     </div>

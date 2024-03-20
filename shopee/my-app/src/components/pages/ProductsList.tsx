@@ -6,7 +6,7 @@ const ProductsList: React.FC<AllProducts> = ({allProducts}) => {
 
     return (
         <div>
-            <h1>Products</h1>
+            <h1 className="text-3xl text-blue-800 font-bold">Products</h1>
             <ul>
                 {allProducts ? (
                     products[0].map((product: Product) => (
